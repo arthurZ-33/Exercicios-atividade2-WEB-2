@@ -27,7 +27,7 @@ O objetivo principal deste código era cimentar a base de sintaxe e lógica de p
 ## 🚀 Próximos Passos (O Horizonte de um Júnior)
 
 1.  Aprender sobre Funções e modularizar este monólito HTML/PHP.
-2.  Entender o que é Orientação a Objetos (OOP) sem entrar em crise existencial.
+2.  Entender o que é Orientação a Objetos (POO) sem entrar em crise existencial.
 3.  Descobrir ferramentas de *linting* para me dizer o que já sei: que o código pode melhorar.
 4.  Continuar treinando até que eu consiga entender o PHP sem precisar de um café triplo.
 
