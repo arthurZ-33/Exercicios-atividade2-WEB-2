@@ -223,6 +223,28 @@
         echo "<div class='resultado'>Tipo: <strong>$tipoLetra_10</strong></div>";
         echo "</div>";
 
+        // ----------------------------------------------------
+        // Exercício 11: Status do Pedido (exer11.php)
+        $status = ["aguardando", "em preparamento", "enviando", "entregue"];
+
+        $inserção = $status[0];
+        switch($inserção){
+            case "aguardando": 
+                echo "Aguardando";
+                break;
+            case "em preparamento": 
+                echo "Em preparamento";
+                break;
+            case "enviando": 
+                echo "Enviando";
+                break;
+            case "entregue": 
+                echo "Entregue";
+                break;
+            default:
+                echo "Status invalido";
+                break;
+        }
         // Fim do bloco PHP
         ?>
     </div>
