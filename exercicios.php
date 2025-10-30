@@ -225,28 +225,186 @@
 
         // ----------------------------------------------------
         // Exercício 11: Status do Pedido (exer11.php)
-        $status = ["aguardando", "em preparamento", "enviando", "entregue"];
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 11: Status do Pedido (Switch Array)</h3>";
+        $status_11 = ["aguardando", "em preparamento", "enviando", "entregue"];
 
-        $inserção = $status[0];
-        switch($inserção){
+        $insercao_11 = $status_11[0]; // Renomeada para evitar conflito
+        $resultado_11 = ""; // Variável para capturar o resultado
+        switch($insercao_11){
             case "aguardando": 
-                echo "Aguardando";
+                $resultado_11 = "Aguardando";
                 break;
             case "em preparamento": 
-                echo "Em preparamento";
+                $resultado_11 = "Em preparamento";
                 break;
             case "enviando": 
-                echo "Enviando";
+                $resultado_11 = "Enviando";
                 break;
             case "entregue": 
-                echo "Entregue";
+                $resultado_11 = "Entregue";
                 break;
             default:
-                echo "Status invalido";
+                $resultado_11 = "Status inválido";
                 break;
         }
+        echo "<p>Status Base: <code>$insercao_11</code></p>";
+        echo "<div class='resultado'>Status Atual: <strong>$resultado_11</strong></div>";
+        echo "</div>";
+
+        // ----------------------------------------------------
+        // Exercício 12: Contador de 1 a 10 (exer12.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 12: Contador de 1 a 10 (For)</h3>";
+        echo "<div class='resultado'>";
+        $lista_12 = [];
+        for ($contador_12 = 1; $contador_12 <= 10; $contador_12++){ // Variável renomeada
+            $lista_12[] = "seu contador " . $contador_12; // Corrigido '+' para '.'
+        }
+        echo implode(" | ", $lista_12);
+        echo "</div>";
+        echo "</div>";
+
+
+        // ----------------------------------------------------
+        // Exercício 13: Contador de 1 a 20 em números pares (exer13.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 13: Contador de 1 a 20 em números pares (For)</h3>";
+        echo "<div class='resultado'>";
+        $lista_13 = [];
+        // Para pares, o loop deve começar em 2 ou o incremento deve ser de 2 em 2
+        // Assumindo que a intenção é exibir ímpar (1, 3, 5...) dado o $contador += 2, mas no título diz 'pares'
+        // Mantendo a lógica do seu loop original (que pega ímpares):
+        for($contador_13 = 1; $contador_13 <= 20; $contador_13 += 2){ // Variável renomeada
+            $lista_13[] = "o seu contador: " . $contador_13; // Corrigido '+' para '.'
+        }
+        echo implode(" | ", $lista_13);
+        echo "</div>";
+        echo "</div>";
+
+
+        // ----------------------------------------------------
+        // Exercício 14: Contador de 1 a 10 tabuada (exer14.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 14: Tabuada do Número 5 (For)</h3>";
+        echo "<div class='resultado'>";
+        $numero_14 = 5; // Variável renomeada
+        $lista_14 = [];
+
+        for($cont_14 = 1; $cont_14 <= 10; $cont_14++){ // Variável renomeada
+            $resultado_14 = $numero_14 * $cont_14; // Variável renomeada
+            $lista_14[] = "$numero_14 x $cont_14 = $resultado_14";
+        }
+        echo implode("<br>", $lista_14);
+        echo "</div>";
+        echo "</div>";
+
+        // ----------------------------------------------------
+        // Exercício 15: Contador de 10 a 1 (exer15.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 15: Contador de 10 a 1 (While)</h3>";
+        echo "<div class='resultado'>";
+        $contador_15 = 10; // Variável renomeada
+        $lista_15 = [];
+
+        while($contador_15 >= 1){
+            $lista_15[] = "Simples contador: " . $contador_15;
+            $contador_15 --;
+        }
+        echo implode(" | ", $lista_15);
+        echo "</div>";
+        echo "</div>";
+        
+
+        // ----------------------------------------------------
+        // Exercício 16: Contador para somar até 100 (exer16.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 16: Soma Acumulada de 1 até 100 (While)</h3>";
+        $soma_16 = 4; // Variável renomeada - Começa com 4 (valor inicial)
+        $contador_16 = 1; // Variável renomeada
+        $limite_16 = 100; // Variável renomeada
+        
+        while($contador_16 <= $limite_16){
+            $soma_16 = $soma_16 + $contador_16;
+            $contador_16 ++;
+        }
+        echo "<p>Soma inicial: <code>4</code>. Soma os números de 1 até $limite_16.</p>";
+        echo "<div class='resultado'>A soma final é: <strong>$soma_16</strong></div>";
+        echo "</div>";
+
+        // ----------------------------------------------------
+        // Exercício 17: Sorteio até achar o número 5! (exer17.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 17: Sorteio até achar o número 5 (Do-While)</h3>";
+        echo "<div class='resultado'>";
+        $numero_17 = 0; // Variável renomeada e inicializada
+        $sorteios_17 = []; // Array para guardar os sorteios
+
+        do{ 
+            $numero_17 = rand(1, 10);
+            $sorteios_17[] = $numero_17;
+        } while($numero_17 != 5 );
+        
+        echo "Números sorteados: " . implode(", ", $sorteios_17) . "<br>";
+        echo "<strong>Finalmente utilizou o 5 xiru!</strong>";
+        echo "</div>";
+        echo "</div>";
+        
+        // ----------------------------------------------------
+        // Exercício 18: Lista de frutas (exer18.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 18: Lista de Frutas (Foreach com HTML)</h3>";
+        $lista_frutas_18 = ["maçã", "banana", "perâ", "abacaxi", "morango"]; // Variável renomeada
+        ?>
+        <p>Lista de frutas:</p>
+        <ul>
+        <?php foreach ($lista_frutas_18 as $fruta_18): // Variável renomeada ?>
+            <li> <?php echo $fruta_18; ?> </li>
+        <?php endforeach; ?>
+        </ul>        
+        <?php
+        echo "</div>";
+        // ----------------------------------------------------
+        // Exercício 19: Soma total de 5 arrays (exer19.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 19: Soma de um Array (Array_Sum)</h3>";
+        
+        $num_19 = [1, 2, 3, 4, 5, 6, 7]; // Variável renomeada (o array tem mais de 5, mas você usa slice)
+
+        $cinco_numeros_19 = array_slice($num_19, 0, 5); // Variável renomeada
+        $soma_19 = array_sum($cinco_numeros_19); // Variável renomeada
+
+        echo "<p>Array Completo: <code>[" . implode(", ", $num_19) . "]</code></p>";
+        echo "<p>Cinco primeiros são: <code>[" . implode(", ", $cinco_numeros_19) . "]</code></p>";
+        echo "<div class='resultado'>Soma: <strong>".$soma_19."</strong></div>"; // Corrigido o echo
+        echo "</div>";
+        ?>
+
+        <?php 
+        // ----------------------------------------------------
+        // Exercício 20: Lista com array associativo (exer20.php)
+        echo "<div class='exercicio'>";
+        echo "<h3>Exercício 20: Dados do Aluno (Array Associativo)</h3>";
+
+        $aluno_20 = [ // Variável renomeada
+            "nome" => "marcelo",
+            "idade" => 21,
+            "curso" => "TI"
+        ];
+
+        echo "<p>Nome: <strong>" . $aluno_20["nome"] . "</strong></p>"; // Formatado para o .resultado
+        echo "<p>Idade: <strong>" . $aluno_20["idade"] . "</strong></p>";
+        echo "<p>Curso: <strong>" . $aluno_20["curso"] . "</strong></p>";
+        echo "<div class='resultado'>Detalhes do Aluno: " . $aluno_20["nome"] . " (" . $aluno_20["idade"] . " anos) - " . $aluno_20["curso"] . "</div>";
+        echo "</div>";
+        ?>
+
+
+        <?php
         // Fim do bloco PHP
         ?>
+
+        
     </div>
 </body>
 </html>
